@@ -1,0 +1,103 @@
+@use "../abstracts/index" as *;
+
+.mobile-menu {
+    width: 100% !important;
+    max-width: min(90%, 320px);
+    border-right: 0 !important;
+    font-family: $font-main;
+
+    .mobile-menu__content {
+        height: 100%;
+    }
+
+    .mobile-menu__body {
+        padding: 16px;
+        overscroll-behavior-y: contain;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .mobile-menu__header {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.mobile-menu__bottom {
+    padding: 15px;
+
+    .dropdown-toggle {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.mobile-menu__footer {
+    .mobile-menu__contact {
+        p {
+            color: var(--text-color-1);
+        }
+
+        margin-bottom: 12px;
+    }
+
+    .mobile-menu__notice {
+        font-weight: bold;
+        color: var(--text-color-1);
+        margin-bottom: 12px;
+    }
+
+    .mobile-menu__info {
+        color: var(--text-color-1);
+    }
+}
+
+
+.mobile-menu__nav {
+    .mobile-menu__item {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--text-color-1);
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+
+
+
+
+.tf-sidebar {
+    margin-right: 70px;
+
+    &.style-1 {
+        margin-right: 0px !important;
+        margin-left: 70px;
+    }
+}
+
+.wg-course-details {
+    margin-left: -38px;
+}
+
+.wg-service-details {
+    margin-left: -38px;
+}
+
+.wg-blog-details {
+    margin-right: -75px;
+}
+
+.list-blog {
+    margin-right: -75px;
+}
+
+#sidebarOffcanvas {
+    width: 350px;
+}

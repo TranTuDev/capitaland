@@ -1,0 +1,71 @@
+.footer {
+    &__accordion {
+        .accordion-item {
+            border: none;
+            background: transparent;
+        }
+
+        .accordion-button {
+            background: transparent;
+            box-shadow: none;
+            border: none;
+            padding: 0;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background: transparent;
+            box-shadow: none;
+            color: inherit;
+        }
+
+        .accordion-body {
+            padding: 0;
+        }
+
+        .accordion-collapse {
+            border: none;
+        }
+    }
+
+
+}
+
+.footer__accordion-button {
+    span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+}
+
+.footer__accordion-header {
+    margin-bottom: 8px;
+}
+
+.footer__accordion-body {
+    .footer__list {
+        a {
+
+            span {
+                font-weight: bold;
+               
+            }
+        }
+
+        .list__email {
+            a {
+                span:first-child {
+                    text-decoration: none;
+                }
+            }
+
+            .list__email-link {
+                text-decoration: underline;
+                text-decoration-color: var(--text-color-1);
+                font-weight: normal;
+            }
+        }
+
+    }
+}

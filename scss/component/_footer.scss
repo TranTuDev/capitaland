@@ -76,10 +76,31 @@
             }
         }
 
+        // .list__email {
+        //     a {
+        //         span:first-child {
+        //             text-decoration: none;
+        //         }
+
+
+        //     }
+
+        //     .list__email-link {
+        //         text-decoration: underline;
+        //         text-decoration-color: var(--text-color-1);
+        //         font-weight: normal;
+        //     }
+        // }
         .list__email {
             a {
                 span:first-child {
-                    text-decoration: none;
+                    color: var(--text-color-1); 
+                }
+
+                &:hover {
+                    span:first-child {
+                        color: var(--text-color-1);
+                    }
                 }
             }
 
@@ -92,6 +113,37 @@
 
     }
 }
+
+.list__office {
+    a {
+        span {
+            color: var(--text-color-1);
+        }
+
+        &:hover {
+            span {
+                color: var(--text-color-1);
+            }
+        }
+    }
+}
+
+.list__hotline {
+    a {
+        span {
+            color: var(--text-color-1);
+        }
+
+        &:hover {
+            span {
+                color: var(--text-color-1);
+            }
+        }
+    }
+}
+
+
+
 
 .footer__accordion-header {
     margin-bottom: 8px;

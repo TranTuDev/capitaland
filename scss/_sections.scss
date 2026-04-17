@@ -490,6 +490,12 @@
     gap: 24px;
 }
 
+.shine-link{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
 
 @media (max-width: 575px) {
     .new__right {

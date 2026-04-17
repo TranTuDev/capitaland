@@ -45,170 +45,57 @@ function initGSAP() {
     }
 
     // ================= SPLIT TEXT (giữ nguyên cho menu) =================
-    // function splitText(el) {
-    //     const $el = $(el);
-    //     if (!$el.length || $el.data('split')) return;
-    //     const text = $el.text().trim();
-    //     if (!text) return;
 
-    //     const words = text.split(/\s+/);
-    //     let html = '';
-    //     words.forEach((word, wi) => {
-    //         html += `<span class="word">`;
-    //         for (let char of word) html += `<span class="char">${char}</span>`;
-    //         html += `</span>`;
-    //         if (wi < words.length - 1) html += ' ';
-    //     });
-    //     $el.html(html);
-    //     $el.data('split', true);
-    // }
-
-    // $('.header__menu-link').each(function () {
-    //     const $link = $(this);
-    //     const $target = $link.find('span').first().length ? $link.find('span').first() : $link;
-    //     splitText($target);
-    //     const chars = $link.find('.char');
-    //     if (!chars.length) return;
-
-    //     $link.on('mouseenter', () => gsap.to(chars, { y: -10, stagger: 0.04, duration: 0.3, ease: 'power2.out' }));
-    //     $link.on('mouseleave', () => gsap.to(chars, { y: 0, stagger: 0.04, duration: 0.3, ease: 'power2.out' }));
-    // });
-
-    // ================= ANIMATION ENTRANCE ĐƠN GIẢN (THEO YÊU CẦU) =================
-    // function initEntranceAnimations() {
-    //     const groups = document.querySelectorAll('section'); // group theo section
-
-    //     groups.forEach(group => {
-    //         const elements = group.querySelectorAll('[data-animation]');
-    //         if (!elements.length) return;
-
-    //         // set trạng thái ban đầu cho từng element
-    //         elements.forEach(el => {
-    //             const type = el.getAttribute('data-animation');
-
-    //             let fromVars = {};
-
-    //             switch (type) {
-    //                 case 'fade-in':
-    //                     fromVars = { opacity: 0 };
-    //                     break;
-
-    //                 case 'fade-in-up':
-    //                     fromVars = { opacity: 0, y: 60 };
-    //                     break;
-
-    //                 case 'zoom-in':
-    //                     fromVars = { opacity: 0, scale: 0.85 };
-    //                     break;
-
-    //                 case 'slide-up':
-    //                     fromVars = { opacity: 0, y: 80 };
-    //                     break;
-
-    //                 default:
-    //                     return;
-    //             }
-
-    //             gsap.set(el, fromVars);
-    //         });
-    //         gsap.to(elements, {
-    //             opacity: 1,
-    //             y: 0,
-    //             scale: 1,
-    //             duration: 0.8,
-    //             ease: 'power3.out',
-    //             stagger: 0.15,
-
-    //             scrollTrigger: {
-    //                 trigger: group,
-    //                 start: 'top 85%',
-    //                 once: false,
-    //                 toggleActions: "play none none reverse",
-    //                 invalidateOnRefresh: true
-    //             }
-    //         });
-    //     });
-    // }
     function initEntranceAnimations() {
         const groups = document.querySelectorAll('section');
         groups.forEach(group => {
             const elements = group.querySelectorAll('[data-animation]');
             if (!elements.length) return;
 
-            elements.forEach(el => {
+            const getFromVars = (el, direction) => {
                 const type = el.getAttribute('data-animation');
-                let fromVars = {};
                 switch (type) {
-                    case 'fade-in':
-                        fromVars = { opacity: 0 };
-                        break;
-                    case 'fade-in-up':
-                        fromVars = { opacity: 0, y: 60 };
-                        break;
-                    case 'zoom-in':
-                        fromVars = { opacity: 0, scale: 0.85 };
-                        break;
-                    case 'slide-up':
-                        fromVars = { opacity: 0, y: 80 };
-                        break;
-                    default:
-                        return;
+                    case 'fade-in': return { opacity: 0 };
+                    case 'fade-in-up': return { opacity: 0, y: direction === 'down' ? 60 : -60 };
+                    case 'zoom-in': return { opacity: 0, scale: 0.85 };
+                    case 'slide-up': return { opacity: 0, y: direction === 'down' ? 80 : -80 };
+                    default: return {};
                 }
-                gsap.set(el, fromVars);
-            });
+            };
+
+            const animateIn = (direction) => {
+                gsap.killTweensOf(elements);
+                elements.forEach((el, i) => {
+                    gsap.fromTo(el,
+                        getFromVars(el, direction), // from: đúng hướng
+                        {
+                            opacity: 1,
+                            y: 0,
+                            scale: 1,
+                            duration: 0.8,
+                            ease: 'power3.out',
+                            delay: i * 0.15,
+                            overwrite: 'auto',
+                        }
+                    );
+                });
+            };
+
+            // Set trạng thái ban đầu
+            elements.forEach(el => gsap.set(el, getFromVars(el, 'down')));
 
             ScrollTrigger.create({
                 trigger: group,
                 start: 'top 85%',
+                end: 'bottom 85%',   // ← trigger onEnterBack sớm hơn
                 invalidateOnRefresh: true,
-                onEnter: () => {
-                    // Scroll xuống → animate từ dưới lên
-                    gsap.to(elements, {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        duration: 0.8,
-                        ease: 'power3.out',
-                        stagger: 0.15,
-                    });
-                },
-                onLeaveBack: () => {
-                    // Scroll ngược lên → reset về trạng thái ban đầu (từ dưới lên)
-                    elements.forEach(el => {
-                        const type = el.getAttribute('data-animation');
-                        let fromVars = {};
-                        switch (type) {
-                            case 'fade-in':
-                                fromVars = { opacity: 0 };
-                                break;
-                            case 'fade-in-up':
-                                fromVars = { opacity: 0, y: 60 };
-                                break;
-                            case 'zoom-in':
-                                fromVars = { opacity: 0, scale: 0.85 };
-                                break;
-                            case 'slide-up':
-                                fromVars = { opacity: 0, y: 80 };
-                                break;
-                        }
-                        gsap.set(el, fromVars);
-                    });
-                },
-                onEnterBack: () => {
-                    // Scroll ngược lên vào lại section → animate từ dưới lên (không phải từ trên xuống)
-                    gsap.to(elements, {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        duration: 0.8,
-                        ease: 'power3.out',
-                        stagger: 0.15,
-                    });
-                }
+                onEnter: () => animateIn('down'),
+                onEnterBack: () => animateIn('up'),
+                onLeave: () => elements.forEach(el => gsap.set(el, getFromVars(el, 'up'))),
+                onLeaveBack: () => elements.forEach(el => gsap.set(el, getFromVars(el, 'down'))),
             });
         });
     }
-
     // ================= CHẠY TẤT CẢ =================
     initEntranceAnimations();
 

@@ -1,12 +1,52 @@
 @use "../abstracts/index" as *;
 
 // hover img
+// .hover-img {
+//     .img-style {
+//         overflow: hidden;
+//         height: 100%;
+
+//         >img {
+//             width: 100%;
+//             height: 100%;
+//             object-fit: cover;
+//             -webkit-transition:
+//                 opacity 0.5s ease,
+//                 transform 0.5s cubic-bezier(0, 0, 0.44, 1.18);
+//             transition:
+//                 opacity 0.5s ease,
+//                 transform 0.5s cubic-bezier(0, 0, 0.44, 1.18);
+//         }
+//     }
+
+//     &:hover {
+//         .img-style {
+//             >img {
+//                 -webkit-transform: scale(1.06);
+//                 transform: scale(1.06);
+//             }
+//         }
+//     }
+
+//     .img-style2 {
+//         overflow: hidden;
+//         border-radius: 10px;
+
+//         .img-hv {
+//             width: 100%;
+//             object-fit: cover;
+//             -webkit-transition: all 0.5s cubic-bezier(0.3, 1, 0.35, 1) 0s;
+//             transition: all 0.5s cubic-bezier(0.3, 1, 0.35, 1) 0s;
+//         }
+//     }
+// }
 .hover-img {
     .img-style {
         overflow: hidden;
         height: 100%;
 
-        >img {
+        img {
+            // bỏ > vì có thẻ <a> chen giữa
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -21,7 +61,8 @@
 
     &:hover {
         .img-style {
-            >img {
+            img {
+                // bỏ > ở đây luôn
                 -webkit-transform: scale(1.06);
                 transform: scale(1.06);
             }
@@ -249,6 +290,29 @@
             &::after {
                 height: 100%;
                 transition-delay: 0.1s; // giữ delay nhẹ cho đẹp
+            }
+        }
+    }
+}
+
+.new__item {
+    &:hover {
+        .hover-img {
+            .img-style {
+                img {
+                    -webkit-transform: scale(1.06);
+                    transform: scale(1.06);
+                }
+            }
+        }
+
+        .hover-shine {
+            .shine-item {
+                &::after {
+                    height: 250%;
+                    transition: all 0.5s linear;
+                    background-color: transparent;
+                }
             }
         }
     }

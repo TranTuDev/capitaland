@@ -25,6 +25,13 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        img {
+            max-width: 150px;
+            height: auto;
+            transform: scale(1);
+            vertical-align: middle;
+        }
     }
 }
 
@@ -34,26 +41,6 @@
     .dropdown-toggle {
         display: flex;
         align-items: center;
-    }
-}
-
-.mobile-menu__footer {
-    .mobile-menu__contact {
-        p {
-            color: var(--text-color-1);
-        }
-
-        margin-bottom: 12px;
-    }
-
-    .mobile-menu__notice {
-        font-weight: bold;
-        color: var(--text-color-1);
-        margin-bottom: 12px;
-    }
-
-    .mobile-menu__info {
-        color: var(--text-color-1);
     }
 }
 

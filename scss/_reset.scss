@@ -533,7 +533,7 @@ a {
 		@include transition3;
 		text-decoration: none;
 		outline: 0;
-		color: var(--main-color)
+		color: var(--text-color-3)
 	}
 }
 
@@ -541,7 +541,7 @@ a {
 	@include transition3;
 
 	&:hover {
-		color: var(--main-color) !important;
+		color: var(--text-color-3) !important;
 	}
 }
 

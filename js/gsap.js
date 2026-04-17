@@ -45,34 +45,34 @@ function initGSAP() {
     }
 
     // ================= SPLIT TEXT (giữ nguyên cho menu) =================
-    function splitText(el) {
-        const $el = $(el);
-        if (!$el.length || $el.data('split')) return;
-        const text = $el.text().trim();
-        if (!text) return;
+    // function splitText(el) {
+    //     const $el = $(el);
+    //     if (!$el.length || $el.data('split')) return;
+    //     const text = $el.text().trim();
+    //     if (!text) return;
 
-        const words = text.split(/\s+/);
-        let html = '';
-        words.forEach((word, wi) => {
-            html += `<span class="word">`;
-            for (let char of word) html += `<span class="char">${char}</span>`;
-            html += `</span>`;
-            if (wi < words.length - 1) html += ' ';
-        });
-        $el.html(html);
-        $el.data('split', true);
-    }
+    //     const words = text.split(/\s+/);
+    //     let html = '';
+    //     words.forEach((word, wi) => {
+    //         html += `<span class="word">`;
+    //         for (let char of word) html += `<span class="char">${char}</span>`;
+    //         html += `</span>`;
+    //         if (wi < words.length - 1) html += ' ';
+    //     });
+    //     $el.html(html);
+    //     $el.data('split', true);
+    // }
 
-    $('.header__menu-link').each(function () {
-        const $link = $(this);
-        const $target = $link.find('span').first().length ? $link.find('span').first() : $link;
-        splitText($target);
-        const chars = $link.find('.char');
-        if (!chars.length) return;
+    // $('.header__menu-link').each(function () {
+    //     const $link = $(this);
+    //     const $target = $link.find('span').first().length ? $link.find('span').first() : $link;
+    //     splitText($target);
+    //     const chars = $link.find('.char');
+    //     if (!chars.length) return;
 
-        $link.on('mouseenter', () => gsap.to(chars, { y: -10, stagger: 0.04, duration: 0.3, ease: 'power2.out' }));
-        $link.on('mouseleave', () => gsap.to(chars, { y: 0, stagger: 0.04, duration: 0.3, ease: 'power2.out' }));
-    });
+    //     $link.on('mouseenter', () => gsap.to(chars, { y: -10, stagger: 0.04, duration: 0.3, ease: 'power2.out' }));
+    //     $link.on('mouseleave', () => gsap.to(chars, { y: 0, stagger: 0.04, duration: 0.3, ease: 'power2.out' }));
+    // });
 
     // ================= ANIMATION ENTRANCE ĐƠN GIẢN (THEO YÊU CẦU) =================
     function initEntranceAnimations() {
@@ -111,19 +111,19 @@ function initGSAP() {
 
                 gsap.set(el, fromVars);
             });
-
-            // animate theo nhóm (🔥 stagger)
             gsap.to(elements, {
                 opacity: 1,
                 y: 0,
                 scale: 1,
                 duration: 0.8,
                 ease: 'power3.out',
-                stagger: 0.15, // 🔥 chạy lần lượt
+                stagger: 0.15,
+
                 scrollTrigger: {
                     trigger: group,
                     start: 'top 85%',
-                    once: true,
+                    once: false,
+                    toggleActions: "play none none reverse",
                     invalidateOnRefresh: true
                 }
             });

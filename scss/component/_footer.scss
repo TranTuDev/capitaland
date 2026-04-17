@@ -67,6 +67,46 @@
     }
 }
 
+.footer__accordion-body {
+    .footer__list {
+        a {
+            span {
+                font-weight: bold;
+
+            }
+        }
+
+        .list__email {
+            a {
+                span:first-child {
+                    text-decoration: none;
+                }
+            }
+
+            .list__email-link {
+                text-decoration: underline;
+                text-decoration-color: var(--text-color-1);
+                font-weight: normal;
+            }
+        }
+
+    }
+}
+
+.footer__accordion-header {
+    margin-bottom: 8px;
+
+    span {
+        i {
+            padding-right: 5px;
+        }
+
+    }
+}
+
+
+
+
 @media (max-width: 575px) {
     .footer__grid {
         grid-template-columns: 1fr;

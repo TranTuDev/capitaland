@@ -30,42 +30,25 @@
 
 }
 
-.footer__accordion-button {
-    span {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
+.accordion-button:not(.collapsed) {
+    box-shadow: none !important;
+    border-bottom: none !important;
 }
 
-.footer__accordion-header {
-    margin-bottom: 8px;
+.faq__button.accordion-button:not(.collapsed) {
+    box-shadow: none !important;
+    border-bottom: none !important;
 }
 
-.footer__accordion-body {
-    .footer__list {
-        a {
-
-            span {
-                font-weight: bold;
-               
-            }
-        }
-
-        .list__email {
-            a {
-                span:first-child {
-                    text-decoration: none;
-                }
-            }
-
-            .list__email-link {
-                text-decoration: underline;
-                text-decoration-color: var(--text-color-1);
-                font-weight: normal;
-            }
-        }
-
-    }
+.faq__body.accordion-body {
+    border-top: none !important;
 }
+
+// .footer__accordion-button {
+//     span {
+//         display: flex;
+//         align-items: center;
+//         gap: 8px;
+//     }
+
+// }

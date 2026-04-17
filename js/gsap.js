@@ -75,61 +75,139 @@ function initGSAP() {
     // });
 
     // ================= ANIMATION ENTRANCE ĐƠN GIẢN (THEO YÊU CẦU) =================
-    function initEntranceAnimations() {
-        const groups = document.querySelectorAll('section'); // group theo section
+    // function initEntranceAnimations() {
+    //     const groups = document.querySelectorAll('section'); // group theo section
 
+    //     groups.forEach(group => {
+    //         const elements = group.querySelectorAll('[data-animation]');
+    //         if (!elements.length) return;
+
+    //         // set trạng thái ban đầu cho từng element
+    //         elements.forEach(el => {
+    //             const type = el.getAttribute('data-animation');
+
+    //             let fromVars = {};
+
+    //             switch (type) {
+    //                 case 'fade-in':
+    //                     fromVars = { opacity: 0 };
+    //                     break;
+
+    //                 case 'fade-in-up':
+    //                     fromVars = { opacity: 0, y: 60 };
+    //                     break;
+
+    //                 case 'zoom-in':
+    //                     fromVars = { opacity: 0, scale: 0.85 };
+    //                     break;
+
+    //                 case 'slide-up':
+    //                     fromVars = { opacity: 0, y: 80 };
+    //                     break;
+
+    //                 default:
+    //                     return;
+    //             }
+
+    //             gsap.set(el, fromVars);
+    //         });
+    //         gsap.to(elements, {
+    //             opacity: 1,
+    //             y: 0,
+    //             scale: 1,
+    //             duration: 0.8,
+    //             ease: 'power3.out',
+    //             stagger: 0.15,
+
+    //             scrollTrigger: {
+    //                 trigger: group,
+    //                 start: 'top 85%',
+    //                 once: false,
+    //                 toggleActions: "play none none reverse",
+    //                 invalidateOnRefresh: true
+    //             }
+    //         });
+    //     });
+    // }
+    function initEntranceAnimations() {
+        const groups = document.querySelectorAll('section');
         groups.forEach(group => {
             const elements = group.querySelectorAll('[data-animation]');
             if (!elements.length) return;
 
-            // set trạng thái ban đầu cho từng element
             elements.forEach(el => {
                 const type = el.getAttribute('data-animation');
-
                 let fromVars = {};
-
                 switch (type) {
                     case 'fade-in':
                         fromVars = { opacity: 0 };
                         break;
-
                     case 'fade-in-up':
                         fromVars = { opacity: 0, y: 60 };
                         break;
-
                     case 'zoom-in':
                         fromVars = { opacity: 0, scale: 0.85 };
                         break;
-
                     case 'slide-up':
                         fromVars = { opacity: 0, y: 80 };
                         break;
-
                     default:
                         return;
                 }
-
                 gsap.set(el, fromVars);
             });
-            gsap.to(elements, {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                duration: 0.8,
-                ease: 'power3.out',
-                stagger: 0.15,
 
-                scrollTrigger: {
-                    trigger: group,
-                    start: 'top 85%',
-                    once: false,
-                    toggleActions: "play none none reverse",
-                    invalidateOnRefresh: true
+            ScrollTrigger.create({
+                trigger: group,
+                start: 'top 85%',
+                invalidateOnRefresh: true,
+                onEnter: () => {
+                    // Scroll xuống → animate từ dưới lên
+                    gsap.to(elements, {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: 0.8,
+                        ease: 'power3.out',
+                        stagger: 0.15,
+                    });
+                },
+                onLeaveBack: () => {
+                    // Scroll ngược lên → reset về trạng thái ban đầu (từ dưới lên)
+                    elements.forEach(el => {
+                        const type = el.getAttribute('data-animation');
+                        let fromVars = {};
+                        switch (type) {
+                            case 'fade-in':
+                                fromVars = { opacity: 0 };
+                                break;
+                            case 'fade-in-up':
+                                fromVars = { opacity: 0, y: 60 };
+                                break;
+                            case 'zoom-in':
+                                fromVars = { opacity: 0, scale: 0.85 };
+                                break;
+                            case 'slide-up':
+                                fromVars = { opacity: 0, y: 80 };
+                                break;
+                        }
+                        gsap.set(el, fromVars);
+                    });
+                },
+                onEnterBack: () => {
+                    // Scroll ngược lên vào lại section → animate từ dưới lên (không phải từ trên xuống)
+                    gsap.to(elements, {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: 0.8,
+                        ease: 'power3.out',
+                        stagger: 0.15,
+                    });
                 }
             });
         });
     }
-
 
     // ================= CHẠY TẤT CẢ =================
     initEntranceAnimations();

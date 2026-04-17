@@ -2362,6 +2362,9 @@ a:focus, a:hover {
 .footer__accordion-body .footer__list .list__email a:hover span:first-child {
   color: var(--text-color-1);
 }
+.footer__accordion-body .footer__list .list__email a:hover .list__email-link {
+  text-decoration-color: var(--text-color-3);
+}
 .footer__accordion-body .footer__list .list__email .list__email-link {
   text-decoration: underline;
   text-decoration-color: var(--text-color-1);

@@ -76,30 +76,20 @@
             }
         }
 
-        // .list__email {
-        //     a {
-        //         span:first-child {
-        //             text-decoration: none;
-        //         }
-
-
-        //     }
-
-        //     .list__email-link {
-        //         text-decoration: underline;
-        //         text-decoration-color: var(--text-color-1);
-        //         font-weight: normal;
-        //     }
-        // }
+      
         .list__email {
             a {
                 span:first-child {
-                    color: var(--text-color-1); 
+                    color: var(--text-color-1);
                 }
 
                 &:hover {
                     span:first-child {
-                        color: var(--text-color-1);
+                        color: var(--text-color-1); 
+                    }
+
+                    .list__email-link {
+                        text-decoration-color: var(--text-color-3); 
                     }
                 }
             }
@@ -110,6 +100,7 @@
                 font-weight: normal;
             }
         }
+
 
     }
 }

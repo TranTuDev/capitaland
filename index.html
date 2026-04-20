@@ -42,7 +42,6 @@
     </div>
 
     <div id="mainWrapper" class="wrapper">
-
         <!-- header -->
         <header id="header" class="header">
             <div class="container">
@@ -388,7 +387,7 @@
             <div class="slider-layout-right">
                 <div class="swiper tf-swiper tf-sw-right membership-slider">
                     <div class="swiper-wrapper mg-40-bt ">
-                        <div class="swiper-slide">
+                        <div class="swiper-slide slide-with " >
                             <div class="membership__card hover-img ">
                                 <div class="membership__card-image img-style">
                                     <img src="images/card/card-1.jpg" alt="card-img" loading="lazy">
@@ -405,7 +404,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide slide-with ">
                             <div class="membership__card hover-img ">
                                 <div class="membership__card-image img-style">
                                     <img src="images/card/card-2.jpg" alt="card-img" loading="lazy">
@@ -413,16 +412,17 @@
 
                                 <div class="membership__card-content">
                                     <p class="text-tagline fw-4">
-                                        <span>Conditions:</span> Accumulated value below VND 10 billion
+                                        <span>Conditions:</span> Accumulated value from VND 10 billion to below VND 50
+                                        billion
                                     </p>
 
                                     <p class="text-tagline fw-4">
-                                        <span>Privileges:</span> 1% discount for the next purchase
+                                        <span>Privileges:</span> 1.5% discount for the next purchase
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide slide-with " >
                             <div class="membership__card hover-img ">
                                 <div class="membership__card-image img-style">
                                     <img src="images/card/card-3.jpg" alt="card-img" loading="lazy">
@@ -430,16 +430,17 @@
 
                                 <div class="membership__card-content">
                                     <p class="text-tagline fw-4">
-                                        <span>Conditions:</span> Accumulated value below VND 10 billion
+                                        <span>Conditions:</span> Accumulated value from VND 50 billion to below VND 100
+                                        billion
                                     </p>
 
                                     <p class="text-tagline fw-4">
-                                        <span>Privileges:</span> 1% discount for the next purchase
+                                        <span>Privileges:</span> 2% discount for the next purchase
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide slide-with " >
                             <div class="membership__card hover-img ">
                                 <div class="membership__card-image img-style">
                                     <img src="images/card/card-4.jpg" alt="card-img" loading="lazy">
@@ -447,18 +448,18 @@
 
                                 <div class="membership__card-content">
                                     <p class="text-tagline fw-4">
-                                        <span>Conditions:</span> Accumulated value below VND 10 billion
+                                        <span>Conditions:</span> Accumulated value above VND 100 billion
                                     </p>
 
                                     <p class="text-tagline fw-4">
-                                        <span>Privileges:</span> 1% discount for the next purchase
+                                        <span>Privileges:</span> 3% discount for the next purchase
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="membership-slider-nav">
-                        <div class="sw-prev"><i class="icon-icon-down_arrow-1"></i></div>
+                        <!-- <div class="sw-prev"><i class="icon-icon-down_arrow-1"></i></div> -->
                         <div class="sw-next"><i class="icon-icon-down_arrow-2"></i></div>
                     </div>
                     <div class="swiper-pagination sw-dot-default justify-content-center d-flex"></div>
@@ -479,7 +480,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="download-step">
-                                <div class="download-step__item active" data-image="images/step/step-1.png">
+                                <div class="download-step__item active style-1" data-image="images/step/step-1.png">
                                     <div class="download-step__button">
                                         <p class="text-paragraph-2">Step</p>
                                         <h3>1</h3>
@@ -883,93 +884,92 @@
             </div>
         </footer>
         <!-- /footer -->
+    </div>
 
-        <!-- download app -->
-        <div class="download-sticky">
-            <a href="#" class="download-sticky__content">
-                <span class="download-sticky__icon">
-                    <i class="icon-download"></i>
-                </span>
-                <div class="download-sticky__expand">
-                    <div class="download-sticky__expand-inner">
-                        <span class="download-sticky__title">Tải ứng dụng</span>
-                        <div class="download-sticky__img">
-                            <img src="./images/step/gg-play.png" alt="Google Play" loading="lazy"
-                                class="download-sticky__store-img">
-                            <img src="./images/step/app-store.png" alt="App Store" loading="lazy"
-                                class="download-sticky__store-img">
-                        </div>
+    <!-- download app -->
+    <div class="download-sticky">
+        <a href="#" class="download-sticky__content">
+            <span class="download-sticky__icon">
+                <i class="icon-download"></i>
+            </span>
+            <div class="download-sticky__expand">
+                <div class="download-sticky__expand-inner">
+                    <span class="download-sticky__title">Tải ứng dụng</span>
+                    <div class="download-sticky__img">
+                        <img src="./images/step/gg-play.png" alt="Google Play" loading="lazy"
+                            class="download-sticky__store-img">
+                        <img src="./images/step/app-store.png" alt="App Store" loading="lazy"
+                            class="download-sticky__store-img">
                     </div>
                 </div>
-            </a>
-            <div class="download-sticky__footer">
-                <span class="download-sticky__footer-text">Thu gọn</span>
-                <i class="icon-quote-left download-sticky__footer-icon"></i>
             </div>
+        </a>
+        <div class="download-sticky__footer">
+            <span class="download-sticky__footer-text">Thu gọn</span>
+            <i class="icon-quote-left download-sticky__footer-icon"></i>
         </div>
-        <!-- /download app -->
+    </div>
+    <!-- /download app -->
 
-        <!-- mobile menu -->
-        <div class="offcanvas offcanvas-start mobile-menu" id="mobileMenu">
-            <div class="mobile-menu__header">
-                <img src="./images/logo/logo-2.png" alt="">
-                <button class="mobile-menu__close btn-close" data-bs-dismiss="offcanvas"></button>
-            </div>
-            <div class="mobile-menu__content">
-                <div class="mobile-menu__body">
-                    <div class="mobile-menu__top">
-                        <ul class="mobile-menu__nav">
-                            <li class="mobile-menu__item">
-                                <a href="#about" class="mobile-menu__link">About</a>
-                            </li>
+    <!-- mobile menu -->
+    <div class="offcanvas offcanvas-start mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__header">
+            <img src="./images/logo/logo-2.png" alt="">
+            <button class="mobile-menu__close btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="mobile-menu__content">
+            <div class="mobile-menu__body">
+                <div class="mobile-menu__top">
+                    <ul class="mobile-menu__nav">
+                        <li class="mobile-menu__item">
+                            <a href="#about" class="mobile-menu__link">About</a>
+                        </li>
 
-                            <li class="mobile-menu__item">
-                                <a href="#membership" class="mobile-menu__link">Membership Tiers &
-                                    Privileges</a>
-                            </li>
+                        <li class="mobile-menu__item">
+                            <a href="#membership" class="mobile-menu__link">Membership Tiers &
+                                Privileges</a>
+                        </li>
 
-                            <li class="mobile-menu__item">
-                                <a href="#app" class="mobile-menu__link">Download App</a>
-                            </li>
+                        <li class="mobile-menu__item">
+                            <a href="#app" class="mobile-menu__link">Download App</a>
+                        </li>
 
-                            <li class="mobile-menu__item">
-                                <a href="#faq" class="mobile-menu__link">FAQs</a>
-                            </li>
+                        <li class="mobile-menu__item">
+                            <a href="#faq" class="mobile-menu__link">FAQs</a>
+                        </li>
 
-                            <li class="mobile-menu__item">
-                                <a href="#new" class="mobile-menu__link">News</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="mobile-menu__bottom d-flex justify-content-center">
-
-                <div class="dropup mobile-menu__languages">
-                    <button class="btn dropdown-toggle" data-bs-toggle="dropdown">
-                        <i class="icon-language"></i>
-                        <span class="mobile-menu__language-text">English</span>
-                    </button>
-
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">English</a></li>
-                        <li><a class="dropdown-item" href="#">Vietnamese</a></li>
-                        <li><a class="dropdown-item" href="#">Chinese</a></li>
+                        <li class="mobile-menu__item">
+                            <a href="#new" class="mobile-menu__link">News</a>
+                        </li>
                     </ul>
                 </div>
-
             </div>
         </div>
-        <!-- /mobile menu -->
+        <div class="mobile-menu__bottom d-flex justify-content-center">
 
-        <!-- scroll Top -->
-        <button id="goTop">
-            <span class="border-progress"></span>
-            <span class="icon icon-up"></span>
-        </button>
-        <!-- /scroll Top -->
+            <div class="dropup mobile-menu__languages">
+                <button class="btn dropdown-toggle" data-bs-toggle="dropdown">
+                    <i class="icon-language"></i>
+                    <span class="mobile-menu__language-text">English</span>
+                </button>
 
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">English</a></li>
+                    <li><a class="dropdown-item" href="#">Vietnamese</a></li>
+                    <li><a class="dropdown-item" href="#">Chinese</a></li>
+                </ul>
+            </div>
+
+        </div>
     </div>
+    <!-- /mobile menu -->
+
+    <!-- scroll Top -->
+    <button id="goTop">
+        <span class="border-progress"></span>
+        <span class="icon icon-up"></span>
+    </button>
+    <!-- /scroll Top -->
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>

@@ -48,7 +48,7 @@
     inset: 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     pointer-events: none;
     z-index: 20;
@@ -177,11 +177,10 @@
 
     &__item {
         display: flex;
-        gap: 24px;
+        gap: 20px;
         cursor: pointer;
         align-items: center;
 
-        // Active state styles
         &.active {
             .download-step__body p {
                 font-weight: 700;
@@ -253,7 +252,7 @@
             content: "";
             position: absolute;
             width: 1px;
-            height: 70px;
+            height: 85px;
             background: var(--dark-5);
             top: calc(100% + 8px);
             left: 50%;
@@ -291,6 +290,14 @@
     }
 }
 
+.download-step {
+    &__item {
+        &.style-1 {
+            align-items: flex-start !important;
+        }
+    }
+}
+
 .download-step__content {
     .img-step {
         display: flex;
@@ -311,7 +318,6 @@
         .img-step {
             display: flex;
             flex-direction: column;
-
             gap: 5px;
         }
 

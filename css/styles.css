@@ -238,7 +238,8 @@ li {
   margin-right: unset;
   max-width: 100%;
   margin-left: auto;
-  padding: 0 12px;
+  padding-left: 12px;
+  padding-right: 0px;
 }
 
 svg path {
@@ -1384,7 +1385,7 @@ a:focus, a:hover {
   inset: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   pointer-events: none;
   z-index: 20;
@@ -1497,7 +1498,7 @@ a:focus, a:hover {
 }
 .download-step__item {
   display: flex;
-  gap: 24px;
+  gap: 20px;
   cursor: pointer;
   align-items: center;
 }
@@ -1557,7 +1558,7 @@ a:focus, a:hover {
   content: "";
   position: absolute;
   width: 1px;
-  height: 70px;
+  height: 85px;
   background: var(--dark-5);
   top: calc(100% + 8px);
   left: 50%;
@@ -1586,6 +1587,10 @@ a:focus, a:hover {
   height: auto;
   object-fit: cover;
   transition: opacity 0.3s ease;
+}
+
+.download-step__item.style-1 {
+  align-items: flex-start !important;
 }
 
 .download-step__content .img-step {

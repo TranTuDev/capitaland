@@ -242,6 +242,11 @@ li {
   padding-right: 0px;
 }
 
+@media (max-width: 575px) {
+  .slider-layout-right {
+    padding-right: 12px !important;
+  }
+}
 svg path {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;

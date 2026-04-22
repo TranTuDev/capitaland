@@ -2321,7 +2321,7 @@ a:focus, a:hover {
     margin-top: 10px;
   }
   .content-img img {
-    max-width: 150px !important;
+    max-width: 130px !important;
     height: auto;
     object-fit: cover;
     display: block;
@@ -2461,26 +2461,20 @@ a:focus, a:hover {
   overflow: hidden;
   height: 100%;
 }
+.hover-img .img-style a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 .hover-img .img-style img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  -webkit-transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0, 0, 0.44, 1.18);
   transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0, 0, 0.44, 1.18);
 }
-.hover-img:hover .img-style img {
-  -webkit-transform: scale(1.06);
+.hover-img:hover img,
+.hover-img .img-style a:hover img {
   transform: scale(1.06);
-}
-.hover-img .img-style2 {
-  overflow: hidden;
-  border-radius: 10px;
-}
-.hover-img .img-style2 .img-hv {
-  width: 100%;
-  object-fit: cover;
-  -webkit-transition: all 0.5s cubic-bezier(0.3, 1, 0.35, 1) 0s;
-  transition: all 0.5s cubic-bezier(0.3, 1, 0.35, 1) 0s;
 }
 
 .hover-shine {
@@ -3456,6 +3450,10 @@ a:focus, a:hover {
   height: auto;
   object-fit: cover;
   display: block;
+}
+
+.new__item:hover .new__content a.new__title {
+  color: var(--text-color-3);
 }
 
 .new__content a:hover {

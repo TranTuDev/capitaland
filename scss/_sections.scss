@@ -496,6 +496,9 @@
     object-fit: cover;
     display: block;
 }
+.new__item:hover .new__content a.new__title {
+    color: var(--text-color-3);
+}
 
 .new__content {
     a {
@@ -503,7 +506,6 @@
             color: var(--text-color-3);
         }
     }
-
 }
 
 @media (max-width: 992px) {

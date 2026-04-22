@@ -27,8 +27,6 @@ function initLoader(onDone) {
             wrapper.style.visibility = 'visible';
             wrapper.style.opacity = '1';
             wrapper.classList.add('wrapper--ready');
-
-            console.log('✅ Loader ẩn - Page vào mượt');
             onDone?.();
         }, 750);
     }, LOADER_DURATION);
@@ -44,58 +42,72 @@ function initGSAP() {
         ScrollTrigger.refresh();
     }
 
-    // ================= SPLIT TEXT (giữ nguyên cho menu) =================
-
+    // ================= SPLIT TEXT (giữ nguyên cho menu) =================//
     function initEntranceAnimations() {
-        const groups = document.querySelectorAll('section');
-        groups.forEach(group => {
-            const elements = group.querySelectorAll('[data-animation]');
-            if (!elements.length) return;
+        const elements = document.querySelectorAll('[data-animation]');
 
-            const getFromVars = (el, direction) => {
-                const type = el.getAttribute('data-animation');
-                switch (type) {
-                    case 'fade-in': return { opacity: 0 };
-                    case 'fade-in-up': return { opacity: 0, y: direction === 'down' ? 60 : -60 };
-                    case 'zoom-in': return { opacity: 0, scale: 0.85 };
-                    case 'slide-up': return { opacity: 0, y: direction === 'down' ? 80 : -80 };
-                    default: return {};
-                }
-            };
+        const getFromVars = (el, direction) => {
+            const type = el.getAttribute('data-animation');
 
-            const animateIn = (direction) => {
-                gsap.killTweensOf(elements);
-                elements.forEach((el, i) => {
-                    gsap.fromTo(el,
-                        getFromVars(el, direction), // from: đúng hướng
-                        {
-                            opacity: 1,
-                            y: 0,
-                            scale: 1,
-                            duration: 0.8,
-                            ease: 'power3.out',
-                            delay: i * 0.15,
-                            overwrite: 'auto',
-                        }
-                    );
-                });
-            };
+            switch (type) {
+                case 'fade-in':
+                    return { opacity: 0 };
 
-            // Set trạng thái ban đầu
-            elements.forEach(el => gsap.set(el, getFromVars(el, 'down')));
+                case 'fade-in-up':
+                    return { opacity: 0, y: direction === 'down' ? 100 : -100 };
+
+                case 'zoom-in':
+                    return { opacity: 0, scale: 0.8 };
+
+                case 'slide-up':
+                    return { opacity: 0, y: direction === 'down' ? 120 : -120 };
+
+                default:
+                    return { opacity: 0 };
+            }
+        };
+
+        elements.forEach((el) => {
 
             ScrollTrigger.create({
-                trigger: group,
+                trigger: el, // 🔥 trigger theo từng element
                 start: 'top 85%',
-                end: 'bottom 85%',   // ← trigger onEnterBack sớm hơn
-                invalidateOnRefresh: true,
-                onEnter: () => animateIn('down'),
-                onEnterBack: () => animateIn('up'),
-                onLeave: () => elements.forEach(el => gsap.set(el, getFromVars(el, 'up'))),
-                onLeaveBack: () => elements.forEach(el => gsap.set(el, getFromVars(el, 'down'))),
+                end: 'bottom 15%',
+
+                onEnter: () => {
+                    gsap.killTweensOf(el);
+                    gsap.set(el, getFromVars(el, 'down'));
+
+                    gsap.to(el, {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: 1,
+                        ease: 'power4.out',
+                        overwrite: 'auto'
+                    });
+                },
+
+                onEnterBack: () => {
+                    gsap.killTweensOf(el);
+                    gsap.set(el, getFromVars(el, 'up'));
+
+                    gsap.to(el, {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: 1,
+                        ease: 'power4.out',
+                        overwrite: 'auto'
+                    });
+                },
+
+                markers: false
             });
+
         });
     }
+
     // ================= CHẠY TẤT CẢ =================
     initEntranceAnimations();
 

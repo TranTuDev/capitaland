@@ -2226,10 +2226,10 @@ a:focus, a:hover {
   color: var(--text-color-3);
 }
 .slider-default .content-img img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  transform: scale(1);
-  vertical-align: middle;
+  object-fit: cover;
+  display: block;
 }
 
 .slider-home .swiper-slide .fade-item {
@@ -2281,7 +2281,18 @@ a:focus, a:hover {
     min-height: 80vh;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
+  .content-img {
+    margin-top: 10px;
+  }
+  .content-img img {
+    max-width: 250px !important;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+}
+@media (max-width: 768px) {
   .tf-slider-show,
   .slider-home-right,
   .slider-home-right .swiper-wrapper,
@@ -2289,13 +2300,31 @@ a:focus, a:hover {
   .slider-default .slider-wrap {
     min-height: 70vh;
   }
+  .content-img {
+    margin-top: 10px;
+  }
+  .content-img img {
+    max-width: 200px !important;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
 }
-@media (max-width: 575px) {
+@media (max-width: 576px) {
   .slider-default .box-tilte-slider p {
     display: none !important;
   }
   .membership-slider {
     padding: 0px 10px !important;
+  }
+  .content-img {
+    margin-top: 10px;
+  }
+  .content-img img {
+    max-width: 150px !important;
+    height: auto;
+    object-fit: cover;
+    display: block;
   }
 }
 /*------------ footer ---------------- */
@@ -3427,6 +3456,10 @@ a:focus, a:hover {
   height: auto;
   object-fit: cover;
   display: block;
+}
+
+.new__content a:hover {
+  color: var(--text-color-3);
 }
 
 @media (max-width: 575px) {

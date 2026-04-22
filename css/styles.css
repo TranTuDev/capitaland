@@ -1643,12 +1643,11 @@ a:focus, a:hover {
   width: 100%;
   z-index: 1030;
   transition: all 0.45s ease;
-  background: transparent;
 }
 .header.is-sticky {
   box-shadow: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(14px);
-  background: 0 8px 30px rgba(0, 0, 0, 0.08);
+  background: var(--text-color-1) !important;
   animation: slideDown 0.4s ease;
 }
 
@@ -2810,6 +2809,16 @@ a:focus, a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.page-loader::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/step/bg-line.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 0;
 }
 .page-loader.is-done {
   animation: loaderSlideUp 0.7s cubic-bezier(0.76, 0, 0.24, 1) forwards;

@@ -151,6 +151,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("../images/step/bg-line.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        z-index: 0;
+    }
 
     &.is-done {
         // Sử dụng trực tiếp các giá trị thời gian và cubic-bezier

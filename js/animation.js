@@ -262,7 +262,7 @@ $(document).ready(function () {
 const header = document.getElementById("header");
 
 window.addEventListener("scroll", function () {
-  if (window.scrollY > 120) {
+  if (window.scrollY > 10) {
     header.classList.add("is-sticky");
   } else {
     header.classList.remove("is-sticky");

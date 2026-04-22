@@ -3462,6 +3462,11 @@ a:focus, a:hover {
   color: var(--text-color-3);
 }
 
+@media (max-width: 992px) {
+  .new__left {
+    margin-bottom: 16px;
+  }
+}
 @media (max-width: 575px) {
   .new__right {
     grid-template-columns: 1fr;

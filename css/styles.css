@@ -2321,7 +2321,7 @@ a:focus, a:hover {
     margin-top: 10px;
   }
   .content-img img {
-    max-width: 130px !important;
+    max-width: 150px !important;
     height: auto;
     object-fit: cover;
     display: block;
@@ -3594,5 +3594,12 @@ a:focus, a:hover {
 }
 
 /* ===== DIVIDER (line ngăn content và footer) ===== */
+@media (max-width: 575px) {
+  h2.size-3 {
+    font-size: 35px !important;
+    line-height: 50px !important;
+    font-weight: 600;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */

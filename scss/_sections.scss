@@ -496,6 +496,7 @@
     object-fit: cover;
     display: block;
 }
+
 .new__item:hover .new__content a.new__title {
     color: var(--text-color-3);
 }
@@ -678,3 +679,15 @@
 //     background: rgba(255, 255, 255, 0.12);
 //     margin-top: 12px;
 // }
+
+
+
+@media (max-width: 575px) {
+    h2 {
+        &.size-3 {
+            font-size: 35px !important;
+            line-height: 50px !important;
+            font-weight: 600;
+        }
+    }
+}

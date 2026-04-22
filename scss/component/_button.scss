@@ -202,7 +202,7 @@
                 }
 
                 &::after {
-                    background: var(--text-color-3);
+                    background: #E8E8E6;
                 }
             }
         }
@@ -254,7 +254,7 @@
             position: absolute;
             width: 1px;
             height: var(--line-height, 85px);
-            background: var(--dark-5);
+            background: #E8E8E6;
             top: calc(100% + 8px);
             left: 50%;
             transform: translateX(-50%);

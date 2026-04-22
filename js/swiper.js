@@ -291,7 +291,7 @@ updateStepLines();
 window.addEventListener('resize', updateStepLines);
 
 
-
+//
 
 
 const membershipSwiper = new Swiper('.membership-slider', {

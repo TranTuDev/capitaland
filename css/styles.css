@@ -1523,7 +1523,7 @@ a:focus, a:hover {
   border-color: var(--text-color-3);
 }
 .download-step__item.active .download-step__button::after {
-  background: var(--text-color-3);
+  background: #E8E8E6;
 }
 .download-step__item:last-child .download-step__button::after {
   display: none;
@@ -1564,7 +1564,7 @@ a:focus, a:hover {
   position: absolute;
   width: 1px;
   height: var(--line-height, 85px);
-  background: var(--dark-5);
+  background: #E8E8E6;
   top: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);

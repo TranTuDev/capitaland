@@ -181,6 +181,7 @@
         cursor: pointer;
         align-items: center;
 
+
         &.active {
             .download-step__body p {
                 font-weight: 700;
@@ -252,11 +253,12 @@
             content: "";
             position: absolute;
             width: 1px;
-            height: 85px;
+            height: var(--line-height, 85px);
             background: var(--dark-5);
             top: calc(100% + 8px);
             left: 50%;
             transform: translateX(-50%);
+            transition: height 0.4s ease;
         }
     }
 
@@ -323,9 +325,9 @@
 
     }
 
-    .download-step__button::after {
-        content: "";
-        height: 90px !important;
-    }
+    // .download-step__button::after {
+    //     content: "";
+    //     height: 90px !important;
+    // }
 
 }

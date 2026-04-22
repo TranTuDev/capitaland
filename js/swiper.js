@@ -218,12 +218,54 @@ $(document).ready(function () {
 
 
 //===step===
+// const steps = document.querySelectorAll('.download-step__item');
+// const preview = document.getElementById('stepPreviewImage');
+
+// steps.forEach(step => {
+//   step.addEventListener('click', () => {
+
+//     const currentActive = document.querySelector('.download-step__item.active');
+
+//     if (currentActive !== step) {
+//       currentActive?.classList.remove('active');
+//       step.classList.add('active');
+
+//       const image = step.dataset.image;
+
+//       preview.style.opacity = 0;
+
+//       setTimeout(() => {
+//         preview.src = image;
+//         preview.style.opacity = 1;
+//       }, 200);
+//     }
+//   });
+// });
+
 const steps = document.querySelectorAll('.download-step__item');
 const preview = document.getElementById('stepPreviewImage');
 
+
+function updateStepLines() {
+  const items = document.querySelectorAll('.download-step__item');
+
+  items.forEach((item, index) => {
+    if (index === items.length - 1) return;
+
+    const currentBtn = item.querySelector('.download-step__button');
+    const nextBtn = items[index + 1].querySelector('.download-step__button');
+    if (!currentBtn || !nextBtn) return;
+
+    const currentRect = currentBtn.getBoundingClientRect();
+    const nextRect = nextBtn.getBoundingClientRect();
+    const lineHeight = nextRect.top - currentRect.bottom - 16;
+
+    currentBtn.style.setProperty('--line-height', `${Math.max(lineHeight, 0)}px`);
+  });
+}
+
 steps.forEach(step => {
   step.addEventListener('click', () => {
-
     const currentActive = document.querySelector('.download-step__item.active');
 
     if (currentActive !== step) {
@@ -231,18 +273,22 @@ steps.forEach(step => {
       step.classList.add('active');
 
       const image = step.dataset.image;
-
       preview.style.opacity = 0;
 
       setTimeout(() => {
         preview.src = image;
         preview.style.opacity = 1;
       }, 200);
+
+      
+      requestAnimationFrame(updateStepLines);
+      setTimeout(updateStepLines, 420);
     }
   });
 });
 
-
+updateStepLines();
+window.addEventListener('resize', updateStepLines);
 
 
 

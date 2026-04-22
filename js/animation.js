@@ -218,7 +218,7 @@ $(document).ready(function () {
       opacity: 1,
       duration: 0.75,
       delay: item.delay / 1000,
-      ease: "cubic-bezier(0.22, 1, 0.36, 1)",   // giữ nguyên easing bạn dùng
+      ease: "cubic-bezier(0.22, 1, 0.36, 1)",   
       onComplete: () => {
         item.animated = true;
       }

@@ -153,6 +153,22 @@
     }
 }
 
+/* mặc định: HIỆN (mobile trước) */
+.pagination-none {
+    display: flex;
+    justify-content: center;
+}
+
+/* >=1200px: ẨN */
+@media (min-width: 1200px) {
+    .pagination-none {
+        display: none;
+    }
+}
+
+
+
+
 
 [class^="tf-btn"],
 [class*=" tf-btn"] {
@@ -168,167 +184,6 @@
 
 
 //==step===//
-
-// .download-step {
-//     display: flex;
-//     flex-direction: column;
-//     gap: 30px;
-//     padding: 30px;
-
-//     &__item {
-//         display: flex;
-//         gap: 20px;
-//         cursor: pointer;
-//         align-items: center;
-
-
-//         &.active {
-//             .download-step__body p {
-//                 font-weight: 700;
-//                 color: var(--text-color-1);
-//             }
-
-//             .download-step__content {
-//                 max-height: 200px;
-//                 opacity: 1;
-//                 margin-top: 12px;
-//             }
-
-//             .download-step__button {
-//                 background: var(--text-color-3);
-
-//                 &::before {
-//                     border-color: var(--text-color-3);
-//                 }
-
-//                 &::after {
-//                     background: #E8E8E6;
-//                 }
-//             }
-//         }
-
-
-//         &:last-child {
-//             .download-step__button::after {
-//                 display: none;
-//             }
-//         }
-//     }
-
-//     &__button {
-//         position: relative;
-//         min-width: 60px;
-//         height: 60px;
-//         border-radius: 50%;
-//         background-color: var(--dark-5);
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: center;
-//         align-items: center;
-//         gap: 2px;
-//         border: 1px solid var(--dark-5);
-//         z-index: 2;
-//         transition: all 0.3s ease;
-
-//         p,
-//         h3 {
-//             color: var(--text-color-1);
-//             margin: 0;
-//             line-height: 1;
-//         }
-
-//         &:hover {
-//             background-color: var(--text-color-3);
-//         }
-
-//         &::before {
-//             content: "";
-//             position: absolute;
-//             inset: -8px;
-//             border: 1px solid var(--dark-5);
-//             border-radius: 50%;
-//         }
-
-//         &::after {
-//             content: "";
-//             position: absolute;
-//             width: 1px;
-//             height: var(--line-height, 85px);
-//             background: #E8E8E6;
-//             top: calc(100% + 8px);
-//             left: 50%;
-//             transform: translateX(-50%);
-//             transition: height 0.4s ease;
-//         }
-//     }
-
-//     &__body {
-//         flex: 1;
-
-//         p {
-//             font-weight: 400;
-//             color: var(--text-color-1);
-//             transition: all 0.3s ease;
-//         }
-//     }
-
-//     &__content {
-//         max-height: 0;
-//         overflow: hidden;
-//         opacity: 0;
-//         transition: all 0.4s ease;
-//     }
-
-//     &__preview {
-//         position: relative;
-//         padding: 30px 148.2px;
-//     }
-
-//     &__image {
-//         width: 100%;
-//         height: auto;
-//         object-fit: cover;
-//         transition: opacity 0.3s ease;
-//     }
-// }
-
-// .download-step {
-//     &__item {
-//         &.style-1 {
-//             align-items: flex-start !important;
-//         }
-//     }
-// }
-
-// .download-step__content {
-//     .img-step {
-//         display: flex;
-//         gap: 30px;
-
-//         img {
-//             width: 100%;
-//             height: auto;
-//             object-fit: cover;
-//             max-width: 157px;
-//             max-height: 55px;
-//         }
-//     }
-// }
-
-// @media (max-width: 575px) {
-//     .download-step__content {
-//         .img-step {
-//             display: flex;
-//             flex-direction: column;
-//             gap: 5px;
-//         }
-
-//     }
-
-
-
-// }
-
 
 
 .download-step-wrapper {
@@ -527,70 +382,6 @@
     }
 }
 
-// @media (max-width: 767px) {
-//     .download-step-thumb {
-//         display: flex !important;
-//         align-items: center !important;
-//         justify-content: center !important;
-//         padding: 20px;
-
-
-//         .swiper-wrapper {
-//             flex-direction: row;
-//             gap: 15px;
-//         }
-
-//         .swiper-slide {
-//             width: auto !important;
-//             margin-top: 0 !important;
-//         }
-//     }
-
-//     .download-step__item {
-//         flex-direction: column;
-//         align-items: center;
-//         gap: 0;
-//     }
-
-//     .download-step__button {
-//         min-width: 52px;
-//         width: 52px;
-//         height: 52px;
-
-//         p {
-//             display: none;
-//         }
-
-//         &::before {
-//             inset: -6px;
-//         }
-
-//         &::after {
-//             display: none;
-//         }
-//     }
-
-//     .download-step__body {
-//         display: none;
-//     }
-
-//     .download-step__preview {
-//         padding: 25px 40px !important;
-//     }
-
-//     .download-step-content .download-step__content {
-//         .img-step {
-//             flex-direction: row;
-//             align-items: center;
-//             justify-content: center;
-//             gap: 8px;
-//         }
-//     }
-
-//     .download-step-content {
-//         padding: 0px !important;
-//     }
-// }
 @media (max-width: 767px) {
     .download-step-thumb {
         display: flex !important;

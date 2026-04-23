@@ -1,36 +1,6 @@
 @use "../abstracts/index" as *;
 
-// .blog-premium {
-//     &__content {
-//         padding: 64px 24px 40px 24px;
-//         height: 236px;
-//         background-color: var(--white-2);
-//         display: flex;
-//         flex-direction: column;
-//         gap: 8px;
-//         text-align: center;
-//         border-radius: 12px;
-//         p{
-//             color: var(--text-color-1);
-//         }
-//     }
 
-//     &__image {
-//         margin-bottom: -50px;
-//         // img{
-//         //     // width: 100%;
-//         //     height: auto;
-//         //     object-fit: cover;
-//         //     &:hover{
-//         //         width: 110%;
-//         //     }
-
-//         // }
-
-//     }
-
-
-// }
 .blog-premium {
     &:hover {
         .blog-premium__image {
@@ -93,6 +63,19 @@
         height: 100%;
     }
 }
+
+
+
+.premium-slider-wrap {
+    margin-bottom: 40px;
+}
+
+@media (min-width: 1200px) {
+    .premium-slider-wrap {
+        margin-bottom: 0;
+    }
+}
+
 
 @media (max-width: 991px) {
     .blog {

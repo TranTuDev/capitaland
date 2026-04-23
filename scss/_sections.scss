@@ -166,21 +166,7 @@
     }
 }
 
-@media (max-width: 576px) {
-    .membership__content {
-        position: relative;
-        z-index: 1;
-    }
 
-    .membership__content::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.5);
-
-        z-index: -1;
-    }
-}
 
 
 @media (max-width: 757px) {
@@ -190,7 +176,31 @@
         text-align: center;
         gap: 10px;
     }
+
+    .membership__content {
+        .heading__title {
+            text-shadow:
+                0 2px 6px rgba(0, 0, 0, 0.7),
+                0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+    }
 }
+
+// @media (max-width: 576px) {
+//     .membership__content {
+//         position: relative;
+//         z-index: 1;
+//     }
+
+//     .membership__content::before {
+//         content: "";
+//         position: absolute;
+//         inset: 0;
+//         background: rgba(0, 0, 0, 0.5);
+
+//         z-index: -1;
+//     }
+// }
 
 
 //==step==//
@@ -249,7 +259,7 @@
 
     .faq__img {
         margin-left: -140px;
-        margin-top: -70px;
+        margin-top: -55px;
         position: relative;
         z-index: 1;
 
@@ -360,7 +370,10 @@
     .faq__img {
         margin-top: 0 !important;
         margin-left: 0 !important;
-        padding-top: 30px;
+        padding-top: 20px;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
 
         img {
             width: 100% !important;

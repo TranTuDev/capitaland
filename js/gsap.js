@@ -69,9 +69,11 @@ function initGSAP() {
 
         elements.forEach((el) => {
 
+            const delay = parseFloat(el.dataset.animationDelay) || 0; 
+
             ScrollTrigger.create({
-                trigger: el, // 🔥 trigger theo từng element
-                start: 'top 85%',
+                trigger: el,
+                start: 'top 95%',
                 end: 'bottom 15%',
 
                 onEnter: () => {
@@ -83,8 +85,10 @@ function initGSAP() {
                         y: 0,
                         scale: 1,
                         duration: 1,
+                        delay: delay,
                         ease: 'power4.out',
-                        overwrite: 'auto'
+                        overwrite: 'auto',
+                        clearProps: "transform"
                     });
                 },
 
@@ -97,8 +101,10 @@ function initGSAP() {
                         y: 0,
                         scale: 1,
                         duration: 1,
+                        delay: delay,
                         ease: 'power4.out',
-                        overwrite: 'auto'
+                        overwrite: 'auto',
+                        clearProps: "transform"
                     });
                 },
 
@@ -106,6 +112,46 @@ function initGSAP() {
             });
 
         });
+
+        // elements.forEach((el) => {
+
+        //     ScrollTrigger.create({
+        //         trigger: el, 
+        //         start: 'top 85%',
+        //         end: 'bottom 15%',
+
+        //         onEnter: () => {
+        //             gsap.killTweensOf(el);
+        //             gsap.set(el, getFromVars(el, 'down'));
+
+        //             gsap.to(el, {
+        //                 opacity: 1,
+        //                 y: 0,
+        //                 scale: 1,
+        //                 duration: 1,
+        //                 ease: 'power4.out',
+        //                 overwrite: 'auto'
+        //             });
+        //         },
+
+        //         onEnterBack: () => {
+        //             gsap.killTweensOf(el);
+        //             gsap.set(el, getFromVars(el, 'up'));
+
+        //             gsap.to(el, {
+        //                 opacity: 1,
+        //                 y: 0,
+        //                 scale: 1,
+        //                 duration: 1,
+        //                 ease: 'power4.out',
+        //                 overwrite: 'auto'
+        //             });
+        //         },
+
+        //         markers: false
+        //     });
+
+        // });
     }
 
     // ================= CHẠY TẤT CẢ =================

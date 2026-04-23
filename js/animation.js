@@ -97,7 +97,7 @@ $(document).ready(function () {
   }
 
   $(window).on('scroll', checkCounter);
-  setTimeout(checkCounter, 100); // chạy lần đầu
+  setTimeout(checkCounter, 100);
 });
 
 // ===== PAGE TRANSITION =====
@@ -218,7 +218,7 @@ $(document).ready(function () {
       opacity: 1,
       duration: 0.75,
       delay: item.delay / 1000,
-      ease: "cubic-bezier(0.22, 1, 0.36, 1)",   
+      ease: "cubic-bezier(0.22, 1, 0.36, 1)",
       onComplete: () => {
         item.animated = true;
       }
@@ -313,6 +313,10 @@ footer.addEventListener('click', () => {
 
 
 // ================= load page =================//
+
+
+
+
 
 // const loader = document.getElementById('pageLoader');
 // const wrapper = document.getElementById('mainWrapper');

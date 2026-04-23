@@ -219,7 +219,7 @@
         margin-top: 10px;
 
         img {
-            max-width: 250px !important;
+            max-width: 220px !important;
             height: auto;
             object-fit: cover;
             display: block;
@@ -249,16 +249,23 @@
             display: block;
         }
     }
+
+    .slider-default .box-tilte-slider {
+        display: grid;
+        gap: 5px;
+    }
+
+    // .slider-default {
+    //     .box-tilte-slider {
+    //         p {
+    //             display: none !important;
+    //         }
+    //     }
+    // }
 }
 
 @media (max-width: 576px) {
-    .slider-default {
-        .box-tilte-slider {
-            p {
-                display: none !important;
-            }
-        }
-    }
+
 
     .membership-slider {
         padding: 0px 10px !important;

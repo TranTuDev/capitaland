@@ -1,77 +1,3 @@
-// ================= PORTFOLIO SWIPER =================
-if ($(".swiper-portfolio").length) {
-  new Swiper(".swiper-portfolio", {
-    slidesPerView: 5,
-    spaceBetween: 10,
-    speed: 1000,
-    loop: false,
-    autoplay: {
-      delay: 3500,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".sw-pagination-portfolio",
-      clickable: true,
-    },
-    breakpoints: {
-      0: { slidesPerView: 1 },
-      768: { slidesPerView: 2 },
-      992: { slidesPerView: 3 },
-      1200: { slidesPerView: 5 },
-    },
-  });
-}
-
-
-// ================= TESTIMONIAL SWIPER =================
-$(document).ready(function () {
-
-  let swiperTestimonialLeft = null;
-  let swiperTestimonialRight = null;
-
-  if ($(".swiper-testimonial-left").length > 0) {
-    swiperTestimonialLeft = new Swiper(".swiper-testimonial-left", {
-      slidesPerView: 1,
-      spaceBetween: 0,
-      speed: 800,
-      loop: true,
-      allowTouchMove: true,
-      grabCursor: true,
-
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
-          centeredSlides: true,
-        },
-        992: {
-          slidesPerView: 1,
-          centeredSlides: false,
-        }
-      }
-    });
-  }
-
-  if ($(".swiper-testimonial-right").length > 0) {
-    swiperTestimonialRight = new Swiper(".swiper-testimonial-right", {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      speed: 800,
-      loop: true,
-      autoHeight: true,
-      pagination: {
-        el: ".sw-pagination-testimonial",
-        clickable: true,
-      },
-    });
-  }
-
-  if (swiperTestimonialLeft && swiperTestimonialRight) {
-    swiperTestimonialLeft.controller.control = swiperTestimonialRight;
-    swiperTestimonialRight.controller.control = swiperTestimonialLeft;
-  }
-
-});
-
 
 // ================= HOME-SLIDER =================
 if ($(".slider-home").length > 0) {
@@ -128,102 +54,65 @@ if ($(".slider-home").length > 0) {
 
 
 
-// ================= PORTFOLIO SLIDER =================
-if ($(".portfolio-slider").length > 0) {
+// ================= PREMIUM-SLIDER =================//
 
-  var swiperPortfolio = new Swiper(".portfolio-slider", {
+jQuery(function ($) {
+  new Swiper('.premium-slider', {
+    loop: false,
+    spaceBetween: 24,
     slidesPerView: 1,
-    spaceBetween: 30,
-    speed: 600,
-    loop: false,
-
     pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
+      el: '.premium-slider .swiper-pagination',
+      clickable: true
     },
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-
     breakpoints: {
-      1400: { slidesPerView: 4 },
-      1200: { slidesPerView: 4 },
-      992: { slidesPerView: 3 },
-      768: { slidesPerView: 2 },
-      0: { slidesPerView: 1 }
-    }
-  });
-
-}
-
-
-// ================= VIDEO POPUP =================
-$(document).ready(function () {
-
-
-  $('.video-play-button').on('click', function (e) {
-    e.preventDefault();
-    var videoSrc = $(this).attr('data-video');
-    $('#videoFrame').attr('src', videoSrc);
-    $('#videoPopup').css('display', 'flex');
-  });
-
-
-  $('#videoClose').on('click', function () {
-    $('#videoFrame').attr('src', '');
-    $('#videoPopup').css('display', 'none');
-  });
-
-  $('#videoPopup').on('click', function (e) {
-    if (e.target === this) {
-      $('#videoFrame').attr('src', '');
-      $('#videoPopup').css('display', 'none');
-    }
-  });
-
-});
-
-
-// ================= COURSE DETAILS SLIDER =================
-$(document).ready(function () {
-
-  const courseSlider = new Swiper('.course-details-slider', {
-    slidesPerView: 2,
-    slidesPerGroup: 2,
-    spaceBetween: 30,
-    loop: false,
-    speed: 800,
-
-    navigation: {
-      nextEl: '.course-details-slider .sw-next',
-      prevEl: '.course-details-slider .sw-prev',
-    },
-
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
+      576: {
+        slidesPerView: 2
       },
-      768: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
+      992: {
+        slidesPerView: 3
+      },
+      1200: {
+        slidesPerView: 4
       }
     }
   });
-
 });
 
 
 
 
-//===step===
+
+
+
+
+//===step===//
+
+
 // const steps = document.querySelectorAll('.download-step__item');
 // const preview = document.getElementById('stepPreviewImage');
 
+
+// function updateStepLines() {
+//   const items = document.querySelectorAll('.download-step__item');
+
+//   items.forEach((item, index) => {
+//     if (index === items.length - 1) return;
+
+//     const currentBtn = item.querySelector('.download-step__button');
+//     const nextBtn = items[index + 1].querySelector('.download-step__button');
+//     if (!currentBtn || !nextBtn) return;
+
+//     const currentRect = currentBtn.getBoundingClientRect();
+//     const nextRect = nextBtn.getBoundingClientRect();
+//     const lineHeight = nextRect.top - currentRect.bottom - 16;
+
+//     currentBtn.style.setProperty('--line-height', `${Math.max(lineHeight, 0)}px`);
+//   });
+// }
+
 // steps.forEach(step => {
 //   step.addEventListener('click', () => {
-
 //     const currentActive = document.querySelector('.download-step__item.active');
 
 //     if (currentActive !== step) {
@@ -231,67 +120,131 @@ $(document).ready(function () {
 //       step.classList.add('active');
 
 //       const image = step.dataset.image;
-
 //       preview.style.opacity = 0;
 
 //       setTimeout(() => {
 //         preview.src = image;
 //         preview.style.opacity = 1;
 //       }, 200);
+
+
+//       requestAnimationFrame(updateStepLines);
+//       setTimeout(updateStepLines, 420);
 //     }
 //   });
 // });
 
-const steps = document.querySelectorAll('.download-step__item');
-const preview = document.getElementById('stepPreviewImage');
+// updateStepLines();
+// window.addEventListener('resize', updateStepLines);
 
 
-function updateStepLines() {
-  const items = document.querySelectorAll('.download-step__item');
+jQuery(function ($) {
+  const $thumbRoot = $('.download-step-thumb');
 
-  items.forEach((item, index) => {
-    if (index === items.length - 1) return;
-
-    const currentBtn = item.querySelector('.download-step__button');
-    const nextBtn = items[index + 1].querySelector('.download-step__button');
-    if (!currentBtn || !nextBtn) return;
-
-    const currentRect = currentBtn.getBoundingClientRect();
-    const nextRect = nextBtn.getBoundingClientRect();
-    const lineHeight = nextRect.top - currentRect.bottom - 16;
-
-    currentBtn.style.setProperty('--line-height', `${Math.max(lineHeight, 0)}px`);
-  });
-}
-
-steps.forEach(step => {
-  step.addEventListener('click', () => {
-    const currentActive = document.querySelector('.download-step__item.active');
-
-    if (currentActive !== step) {
-      currentActive?.classList.remove('active');
-      step.classList.add('active');
-
-      const image = step.dataset.image;
-      preview.style.opacity = 0;
-
-      setTimeout(() => {
-        preview.src = image;
-        preview.style.opacity = 1;
-      }, 200);
-
-      
-      requestAnimationFrame(updateStepLines);
-      setTimeout(updateStepLines, 420);
+  const stepThumb = new Swiper('.download-step-thumb', {
+    direction: 'vertical',
+    slidesPerView: 5,
+    spaceBetween: 0,
+    watchSlidesProgress: true,
+    slideToClickedSlide: true,
+    speed: 600,
+    breakpoints: {
+      0: {
+        direction: 'horizontal',
+        slidesPerView: 5,
+        spaceBetween: 12
+      },
+      768: {
+        direction: 'vertical',
+        slidesPerView: 5,
+        spaceBetween: 0
+      }
     }
   });
+
+  const stepContent = new Swiper('.download-step-content', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    speed: 600,
+    autoHeight: true
+  });
+
+  function syncStepActiveState(index) {
+    $thumbRoot.find('.download-step__item').removeClass('active');
+    $thumbRoot.find('.swiper-slide').eq(index).find('.download-step__item').addClass('active');
+  }
+
+  function updateStepLines() {
+    const slides = document.querySelectorAll('.download-step-thumb .swiper-slide');
+
+    slides.forEach((slide) => {
+      const btn = slide.querySelector('.download-step__button');
+      if (btn) btn.style.removeProperty('--line-height');
+    });
+
+    if (window.innerWidth <= 767) return;
+
+    slides.forEach((slide, index) => {
+      if (index === slides.length - 1) return;
+
+      const currentBtn = slide.querySelector('.download-step__button');
+      const nextBtn = slides[index + 1]?.querySelector('.download-step__button');
+
+      if (!currentBtn || !nextBtn) return;
+
+      const currentRect = currentBtn.getBoundingClientRect();
+      const nextRect = nextBtn.getBoundingClientRect();
+
+      const lineHeight = nextRect.top - currentRect.bottom - 8;
+      currentBtn.style.setProperty('--line-height', `${Math.max(lineHeight, 30)}px`);
+    });
+  }
+
+  function refreshLines() {
+    requestAnimationFrame(() => {
+      updateStepLines();
+      setTimeout(updateStepLines, 450);
+    });
+  }
+
+  function goToStep(index) {
+    stepThumb.slideTo(index);
+    stepContent.slideTo(index);
+    syncStepActiveState(index);
+    refreshLines();
+  }
+
+  $thumbRoot.find('.swiper-slide').each(function (index) {
+    $(this).on('click', function () {
+      goToStep(index);
+    });
+  });
+
+  stepContent.on('slideChange', function () {
+    const index = stepContent.activeIndex;
+    stepThumb.slideTo(index);
+    syncStepActiveState(index);
+    refreshLines();
+  });
+
+  stepThumb.on('slideChange', function () {
+    syncStepActiveState(stepThumb.activeIndex);
+    refreshLines();
+  });
+
+  $(window).on('resize', function () {
+    refreshLines();
+  });
+
+  syncStepActiveState(0);
+  refreshLines();
 });
 
-updateStepLines();
-window.addEventListener('resize', updateStepLines);
 
 
-//
+
+
+//================ MEMBERSHIP-SLIDER =================//
 
 
 const membershipSwiper = new Swiper('.membership-slider', {

@@ -71,6 +71,29 @@
     }
 }
 
+.blog-premium__image {
+    img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.premium-slider {
+    overflow: hidden;
+}
+
+.premium-slider {
+    .swiper-slide {
+        height: auto;
+    }
+}
+
+.premium-slider {
+    .blog-premium {
+        height: 100%;
+    }
+}
+
 @media (max-width: 991px) {
     .blog {
         .blog-premium {

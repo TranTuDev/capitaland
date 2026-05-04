@@ -69,7 +69,10 @@ function initGSAP() {
 
         elements.forEach((el) => {
 
-            const delay = parseFloat(el.dataset.animationDelay) || 0; 
+            const delay = parseFloat(el.dataset.animationDelay) || 0;
+            const type = el.getAttribute('data-animation');
+            // Mặc định fade-in sẽ chạy chậm hơn (1.5s), các hiệu ứng khác là 1s
+            const duration = parseFloat(el.dataset.animationDuration) || (type === 'fade-in' ? 2.5 : 1);
 
             ScrollTrigger.create({
                 trigger: el,
@@ -84,7 +87,7 @@ function initGSAP() {
                         opacity: 1,
                         y: 0,
                         scale: 1,
-                        duration: 1,
+                        duration: duration,
                         delay: delay,
                         ease: 'power4.out',
                         overwrite: 'auto',
@@ -100,7 +103,7 @@ function initGSAP() {
                         opacity: 1,
                         y: 0,
                         scale: 1,
-                        duration: 1,
+                        duration: duration,
                         delay: delay,
                         ease: 'power4.out',
                         overwrite: 'auto',

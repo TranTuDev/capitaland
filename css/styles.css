@@ -1596,6 +1596,7 @@ a:focus, a:hover {
   flex: 1;
 }
 .download-step__body p {
+  font-weight: 400;
   margin-bottom: 0;
   color: var(--text-color-1);
   transition: all 0.3s ease;
@@ -1610,7 +1611,7 @@ a:focus, a:hover {
 }
 
 .download-step-thumb .download-step__item.active .download-step__body p {
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-color-1);
 }
 .download-step-thumb .download-step__item.active .download-step__content {
@@ -2372,7 +2373,7 @@ a:focus, a:hover {
   color: var(--text-color-3);
 }
 .slider-default .content-img img {
-  width: 70%;
+  width: 90%;
   height: auto;
   object-fit: cover;
   display: block;

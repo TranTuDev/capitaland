@@ -286,6 +286,7 @@
     flex: 1;
 
     p {
+        font-weight: 400;
         margin-bottom: 0;
         color: var(--text-color-1);
         transition: all 0.3s ease;
@@ -302,7 +303,7 @@
 
 .download-step-thumb .download-step__item.active {
     .download-step__body p {
-        font-weight: 700;
+        font-weight: 600;
         color: var(--text-color-1);
     }
 

@@ -2322,24 +2322,15 @@ a:focus, a:hover {
 .tf-slider-show {
   position: relative;
   overflow: hidden;
-  min-height: 90vh;
-}
-
-.slider-home-right,
-.slider-home-right .swiper-wrapper,
-.slider-home-right .swiper-slide {
-  min-height: 90vh;
 }
 
 .slider-default .slider-wrap {
   position: relative;
-  min-height: 90vh;
   width: 100%;
 }
 
 .slider-default .slider-wrap {
   position: relative;
-  min-height: 90vh;
   width: 100%;
 }
 .slider-default .slider-wrap .image {
@@ -2350,7 +2341,7 @@ a:focus, a:hover {
 }
 .slider-default .slider-wrap .image img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-position: center;
   object-fit: cover;
 }

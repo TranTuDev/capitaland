@@ -1442,7 +1442,12 @@ a:focus, a:hover {
 
 @media (max-width: 1199px) {
   .membership-slider-nav {
-    width: 100%;
+    width: 95%;
+  }
+}
+@media (max-width: 574px) {
+  .membership-slider-nav {
+    width: 100% !important;
   }
 }
 .sw-dot-default {

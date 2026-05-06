@@ -279,12 +279,10 @@ jQuery(function ($) {
 const membershipSwiper = new Swiper('.membership-slider', {
   slidesPerView: 3.2,
   spaceBetween: 24,
-  // loop: true,
   speed: 800,
 
   navigation: {
     nextEl: '.membership-slider .sw-next',
-    prevEl: '.membership-slider .sw-prev',
   },
 
   pagination: {
@@ -293,20 +291,32 @@ const membershipSwiper = new Swiper('.membership-slider', {
   },
 
   breakpoints: {
-    0: {
-      slidesPerView: 1
-    },
-    575: {
-      slidesPerView: 1.5
-    },
-    768: {
-      slidesPerView: 2.5
-    },
-    1199: {
-      slidesPerView: 3.2
-    }
+    0: { slidesPerView: 1 },
+    575: { slidesPerView: 1.5 },
+    768: { slidesPerView: 2.5 },
+    1199: { slidesPerView: 3.2 }
+  },
 
+  on: {
+    init: function () {
+      toggleNextBtn(this);
+    },
+    slideChange: function () {
+      toggleNextBtn(this);
+    }
   }
 });
 
+// function xử lý ẩn/hiện
+function toggleNextBtn(swiper) {
+  const nextBtn = document.querySelector('.membership-slider .sw-next');
+
+  if (swiper.isEnd) {
+    nextBtn.style.opacity = '0';
+    nextBtn.style.pointerEvents = 'none';
+  } else {
+    nextBtn.style.opacity = '1';
+    nextBtn.style.pointerEvents = 'auto';
+  }
+}
 

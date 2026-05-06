@@ -475,4 +475,27 @@
             gap: 5px;
         }
     }
+     .download-step__button {
+        min-width: 52px;
+        width: 52px;
+        height: 52px;
+
+        p {
+            display: none;
+        }
+
+        &::before {
+            inset: -6px;
+        }
+
+        &::after {
+            display: block;
+            width: 10px !important;
+            height: 1px;
+            top: 50%;
+            left: calc(100% + 3px) !important;
+            transform: translateY(-50%);
+            background: #e8e8e6;
+        }
+    }
 }

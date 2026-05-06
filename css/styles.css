@@ -1747,6 +1747,26 @@ a:focus, a:hover {
     flex-direction: row;
     gap: 5px;
   }
+  .download-step__button {
+    min-width: 52px;
+    width: 52px;
+    height: 52px;
+  }
+  .download-step__button p {
+    display: none;
+  }
+  .download-step__button::before {
+    inset: -6px;
+  }
+  .download-step__button::after {
+    display: block;
+    width: 10px !important;
+    height: 1px;
+    top: 50%;
+    left: calc(100% + 3px) !important;
+    transform: translateY(-50%);
+    background: #e8e8e6;
+  }
 }
 /*------------ header ---------------- */
 /* ---------------------------------------------------------

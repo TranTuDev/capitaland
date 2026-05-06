@@ -2373,7 +2373,7 @@ a:focus, a:hover {
   color: var(--text-color-3);
 }
 .slider-default .content-img img {
-  width: 90%;
+  width: 100%;
   height: auto;
   object-fit: cover;
   display: block;
@@ -2425,7 +2425,7 @@ a:focus, a:hover {
   .slider-home-right .swiper-wrapper,
   .slider-home-right .swiper-slide,
   .slider-default .slider-wrap {
-    min-height: 80vh;
+    height: 750px;
   }
 }
 @media (max-width: 768px) {
@@ -2434,7 +2434,7 @@ a:focus, a:hover {
   .slider-home-right .swiper-wrapper,
   .slider-home-right .swiper-slide,
   .slider-default .slider-wrap {
-    min-height: 70vh;
+    height: 600px;
   }
   .slider-default .box-tilte-slider {
     display: grid;

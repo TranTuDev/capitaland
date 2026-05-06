@@ -2459,7 +2459,7 @@ a:focus, a:hover {
   .slider-home-right .swiper-wrapper,
   .slider-home-right .swiper-slide,
   .slider-default .slider-wrap {
-    height: 600px;
+    height: 450px;
   }
   .slider-default .box-tilte-slider {
     display: grid;

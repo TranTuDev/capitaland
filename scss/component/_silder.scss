@@ -38,10 +38,10 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 767px) {
 
     .membership__image img {
-        width: 200% !important;
+        width: 300% !important;
         height: 100%;
         object-fit: cover;
     }

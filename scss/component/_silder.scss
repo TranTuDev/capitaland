@@ -38,6 +38,15 @@
     }
 }
 
+@media (max-width: 576px) {
+
+    .membership__image img {
+        width: 200% !important;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
 // ============================================================
 // SLIDER SHOW — wrapper section
 // ============================================================

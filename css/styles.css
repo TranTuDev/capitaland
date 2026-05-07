@@ -2344,6 +2344,13 @@ a:focus, a:hover {
   object-fit: cover;
 }
 
+@media (max-width: 576px) {
+  .membership__image img {
+    width: 200% !important;
+    height: 100%;
+    object-fit: cover;
+  }
+}
 .tf-slider-show {
   position: relative;
   overflow: hidden;

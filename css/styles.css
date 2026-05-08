@@ -1767,6 +1767,9 @@ a:focus, a:hover {
     transform: translateY(-50%);
     background: #e8e8e6;
   }
+  .download-step__preview {
+    padding: 25px 100px !important;
+  }
 }
 /*------------ header ---------------- */
 /* ---------------------------------------------------------
@@ -3447,8 +3450,6 @@ a:focus, a:hover {
   padding: 16px 24px;
   background: transparent;
   box-shadow: none;
-  font-weight: 600;
-  font-size: 20px;
   color: var(--text-color-1);
   border: none;
 }

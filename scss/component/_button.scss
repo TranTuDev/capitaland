@@ -104,6 +104,7 @@
     }
 
 }
+
 @media (max-width: 574px) {
     .membership-slider-nav {
         width: 100% !important;
@@ -475,7 +476,8 @@
             gap: 5px;
         }
     }
-     .download-step__button {
+
+    .download-step__button {
         min-width: 52px;
         width: 52px;
         height: 52px;
@@ -498,4 +500,9 @@
             background: #e8e8e6;
         }
     }
+
+    .download-step__preview {
+        padding: 25px 100px !important;
+    }
+
 }

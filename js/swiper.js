@@ -242,7 +242,7 @@ const membershipSwiper = new Swiper('.membership-slider', {
         0:    { slidesPerView: 1 },
         575:  { slidesPerView: 1.5 },
         768:  { slidesPerView: 2.5 },
-        1200: { slidesPerView: 4 },   // ← desktop: hiện đủ 4 card
+        1200: { slidesPerView: 4 },   
     },
 
     on: {

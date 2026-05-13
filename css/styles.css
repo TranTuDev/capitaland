@@ -2369,24 +2369,24 @@ a:focus, a:hover {
 .tf-slider-show {
   position: relative;
   overflow: hidden;
-  height: 750px;
+  min-height: 75vh;
 }
 
 .slider-home-right,
 .slider-home-right .swiper-wrapper,
 .slider-home-right .swiper-slide {
-  height: 750px;
+  min-height: 75vh;
 }
 
 .slider-default .slider-wrap {
   position: relative;
-  height: 750px;
+  min-height: 75vh;
   width: 100%;
 }
 
 .slider-default .slider-wrap {
   position: relative;
-  height: 750px;
+  min-height: 75vh;
   width: 100%;
 }
 .slider-default .slider-wrap .image {
@@ -2466,13 +2466,21 @@ a:focus, a:hover {
   z-index: 10;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1500px) {
+  .content-img img {
+    width: 100% !important;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+}
+@media (max-width: 1200px) {
   .tf-slider-show,
   .slider-home-right,
   .slider-home-right .swiper-wrapper,
   .slider-home-right .swiper-slide,
   .slider-default .slider-wrap {
-    height: 750px;
+    min-height: 60vh;
   }
 }
 @media (max-width: 768px) {
@@ -2481,7 +2489,7 @@ a:focus, a:hover {
   .slider-home-right .swiper-wrapper,
   .slider-home-right .swiper-slide,
   .slider-default .slider-wrap {
-    height: 450px;
+    height: 55vh;
   }
   .slider-default .box-tilte-slider {
     display: grid;

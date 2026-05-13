@@ -2480,7 +2480,7 @@ a:focus, a:hover {
   .slider-home-right .swiper-wrapper,
   .slider-home-right .swiper-slide,
   .slider-default .slider-wrap {
-    min-height: 60vh;
+    min-height: 60vh !important;
   }
 }
 @media (max-width: 768px) {
@@ -2489,7 +2489,7 @@ a:focus, a:hover {
   .slider-home-right .swiper-wrapper,
   .slider-home-right .swiper-slide,
   .slider-default .slider-wrap {
-    height: 55vh;
+    min-height: 55vh !important;
   }
   .slider-default .box-tilte-slider {
     display: grid;
@@ -2497,6 +2497,13 @@ a:focus, a:hover {
   }
 }
 @media (max-width: 576px) {
+  .tf-slider-show,
+  .slider-home-right,
+  .slider-home-right .swiper-wrapper,
+  .slider-home-right .swiper-slide,
+  .slider-default .slider-wrap {
+    min-height: 45vh !important;
+  }
   .membership-slider {
     padding: 0px 10px !important;
   }

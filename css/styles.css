@@ -2321,8 +2321,20 @@ a:focus, a:hover {
  * RTL
  ------------------------------------------------------------ */
 /*---------- Abstracts variable ----------- */
-.membership-slider {
-  padding-right: 20px;
+@media (min-width: 1200px) {
+  .membership-slider .sw-next,
+  .membership-slider .sw-prev,
+  .membership-slider .swiper-pagination {
+    display: none !important;
+  }
+}
+@media (max-width: 1200px) {
+  .margin-40-bt {
+    margin-bottom: 40px !important;
+  }
+}
+.margin-40-bt {
+  margin-bottom: 0px;
 }
 
 .membership__card {
@@ -2357,24 +2369,24 @@ a:focus, a:hover {
 .tf-slider-show {
   position: relative;
   overflow: hidden;
-  height: 900px;
+  height: 750px;
 }
 
 .slider-home-right,
 .slider-home-right .swiper-wrapper,
 .slider-home-right .swiper-slide {
-  height: 900px;
+  height: 750px;
 }
 
 .slider-default .slider-wrap {
   position: relative;
-  height: 900px;
+  height: 750px;
   width: 100%;
 }
 
 .slider-default .slider-wrap {
   position: relative;
-  height: 900px;
+  height: 750px;
   width: 100%;
 }
 .slider-default .slider-wrap .image {
@@ -2408,7 +2420,7 @@ a:focus, a:hover {
   color: var(--text-color-3);
 }
 .slider-default .content-img img {
-  width: 100%;
+  width: 80%;
   height: auto;
   object-fit: cover;
   display: block;

@@ -3,10 +3,31 @@
 // .slide-with {
 //     width: 364px !important;
 // }
+@media (min-width: 1200px) {
 
-.membership-slider {
-    padding-right: 20px;
+    .membership-slider .sw-next,
+    .membership-slider .sw-prev,
+    .membership-slider .swiper-pagination {
+        display: none !important;
+    }
+
+
 }
+
+@media (max-width: 1200px) {
+
+    .margin-40-bt {
+        margin-bottom: 40px !important;
+    }
+
+
+}
+
+.margin-40-bt {
+    margin-bottom: 0px;
+}
+
+
 
 .membership {
     &__card {
@@ -52,13 +73,13 @@
 .tf-slider-show {
     position: relative;
     overflow: hidden;
-    height: 900px;
+    height: 750px;
 }
 
 .slider-home-right,
 .slider-home-right .swiper-wrapper,
 .slider-home-right .swiper-slide {
-    height: 900px;
+    height: 750px;
 }
 
 .slider-default {
@@ -67,7 +88,7 @@
     // position: relative;
     .slider-wrap {
         position: relative;
-        height: 900px;
+        height: 750px;
         width: 100%;
     }
 }
@@ -78,7 +99,7 @@
 .slider-default {
     .slider-wrap {
         position: relative;
-        height: 900px;
+        height: 750px;
         width: 100%;
 
         .image {
@@ -129,7 +150,7 @@
     .content-img {
 
         img {
-            width: 100%;
+            width: 80%;
             height: auto;
             object-fit: cover;
             display: block;

@@ -224,38 +224,63 @@ jQuery(function ($) {
 
 
 //================ MEMBERSHIP-SLIDER =================//
-
-
 const membershipSwiper = new Swiper('.membership-slider', {
-  slidesPerView: 3.2,
-  spaceBetween: 24,
-  speed: 800,
+    slidesPerView: 4,       // desktop mặc định hiện đủ 4
+    spaceBetween: 24,
+    speed: 800,
 
-  navigation: {
-    nextEl: '.membership-slider .sw-next',
-  },
-
-  pagination: {
-    el: '.membership-slider .swiper-pagination',
-    clickable: true,
-  },
-
-  breakpoints: {
-    0: { slidesPerView: 1 },
-    575: { slidesPerView: 1.5 },
-    768: { slidesPerView: 2.5 },
-    1199: { slidesPerView: 3.2 }
-  },
-
-  on: {
-    init: function () {
-      toggleNextBtn(this);
+    navigation: {
+        nextEl: '.membership-slider .sw-next',
     },
-    slideChange: function () {
-      toggleNextBtn(this);
+
+    pagination: {
+        el: '.membership-slider .swiper-pagination',
+        clickable: true,
+    },
+
+    breakpoints: {
+        0:    { slidesPerView: 1 },
+        575:  { slidesPerView: 1.5 },
+        768:  { slidesPerView: 2.5 },
+        1200: { slidesPerView: 4 },   // ← desktop: hiện đủ 4 card
+    },
+
+    on: {
+        init: function () { toggleNextBtn(this); },
+        slideChange: function () { toggleNextBtn(this); }
     }
-  }
 });
+
+// const membershipSwiper = new Swiper('.membership-slider', {
+//   slidesPerView: 3.2,
+//   spaceBetween: 24,
+//   speed: 800,
+
+//   navigation: {
+//     nextEl: '.membership-slider .sw-next',
+//   },
+
+//   pagination: {
+//     el: '.membership-slider .swiper-pagination',
+//     clickable: true,
+//   },
+
+//   breakpoints: {
+//     0: { slidesPerView: 1 },
+//     575: { slidesPerView: 1.5 },
+//     768: { slidesPerView: 2.5 },
+//     1199: { slidesPerView: 3.2 }
+//   },
+
+//   on: {
+//     init: function () {
+//       toggleNextBtn(this);
+//     },
+//     slideChange: function () {
+//       toggleNextBtn(this);
+//     }
+//   }
+// });
 
 // function xử lý ẩn/hiện
 function toggleNextBtn(swiper) {

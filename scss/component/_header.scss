@@ -79,15 +79,30 @@
         text-decoration: none;
     }
 
-    img {
-        max-width: 100%;
-        height: auto;
-        transform: scale(1);
-        vertical-align: middle;
-    }
+    // img {
+    //     max-width: 100%;
+    //     height: auto;
+    //     transform: scale(1);
+    //     vertical-align: middle;
+    // }
 
 }
+.header__logo img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
 
+  
+    &:first-child {
+        max-height: 40px;  
+        width: auto;
+    }
+
+    &:last-child {
+        max-height: 40px; 
+        width: auto;
+    }
+}
 .header__menu {
     gap: 24px;
 }

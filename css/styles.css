@@ -1859,6 +1859,14 @@ a:focus, a:hover {
   width: auto;
 }
 
+@media (max-width: 576px) {
+  .header__logo img:first-child {
+    max-height: 35px !important;
+  }
+  .header__logo img:last-child {
+    max-height: 35px !important;
+  }
+}
 .header__menu {
   gap: 24px;
 }
@@ -2377,24 +2385,24 @@ a:focus, a:hover {
 .tf-slider-show {
   position: relative;
   overflow: hidden;
-  min-height: 75vh;
+  min-height: 100vh;
 }
 
 .slider-home-right,
 .slider-home-right .swiper-wrapper,
 .slider-home-right .swiper-slide {
-  min-height: 75vh;
+  min-height: 100vh;
 }
 
 .slider-default .slider-wrap {
   position: relative;
-  min-height: 75vh;
+  min-height: 100vh;
   width: 100%;
 }
 
 .slider-default .slider-wrap {
   position: relative;
-  min-height: 75vh;
+  min-height: 100vh;
   width: 100%;
 }
 .slider-default .slider-wrap .image {
@@ -2428,7 +2436,7 @@ a:focus, a:hover {
   color: var(--text-color-3);
 }
 .slider-default .content-img img {
-  width: 80%;
+  width: 100%;
   height: auto;
   object-fit: cover;
   display: block;
@@ -2474,43 +2482,13 @@ a:focus, a:hover {
   z-index: 10;
 }
 
-@media (max-width: 1500px) {
-  .content-img img {
-    width: 100% !important;
-    height: auto;
-    object-fit: cover;
-    display: block;
-  }
-}
-@media (max-width: 1200px) {
-  .tf-slider-show,
-  .slider-home-right,
-  .slider-home-right .swiper-wrapper,
-  .slider-home-right .swiper-slide,
-  .slider-default .slider-wrap {
-    min-height: 60vh !important;
-  }
-}
-@media (max-width: 768px) {
-  .tf-slider-show,
-  .slider-home-right,
-  .slider-home-right .swiper-wrapper,
-  .slider-home-right .swiper-slide,
-  .slider-default .slider-wrap {
-    min-height: 55vh !important;
-  }
-  .slider-default .box-tilte-slider {
-    display: grid;
-    gap: 5px;
-  }
-}
 @media (max-width: 576px) {
   .tf-slider-show,
   .slider-home-right,
   .slider-home-right .swiper-wrapper,
   .slider-home-right .swiper-slide,
   .slider-default .slider-wrap {
-    min-height: 45vh !important;
+    min-height: 85vh !important;
   }
   .membership-slider {
     padding: 0px 10px !important;
